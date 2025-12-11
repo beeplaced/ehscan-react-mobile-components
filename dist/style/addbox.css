@@ -1,0 +1,112 @@
+.ext-add-inputbox{
+    background-color: transparent;
+    position: relative;
+    border-radius: var(--ext-add-inputbox-border-radius, 10px);
+    user-select: none;
+    border: var(--ext-add-inputbox-border, 2px solid white);
+}
+
+.ext-add-inputbox-title{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    position: absolute;
+    top: var(--ext-add-inputbox-title-top, -15px);
+    width: 100%;
+    align-items: center;
+}
+
+.ext-add-inputbox-plus-svg > line{
+    stroke: var(--ext-add-inputbox-plus-svg-stroke, white);
+    stroke-width: var(--ext-add-inputbox-plus-svg-strokeWidth, 3);
+}
+
+.ext-add-inputbox-title-plus-wrapper{
+    background-color: var(--ext-add-inputbox-plus-bck-clr, lightblue);
+    padding: 0 var(--ext-add-inputbox-plus-padding, 7px);
+    display: flex;
+    margin-right: var(--ext-add-inputbox-title-plus-margin-right, 15px);
+}
+
+.ext-add-inputbox-title-plus{
+    display: flex;
+    background-color: var(--ext-add-inputbox-title-plus-bck-clr, transparent);
+    border-radius: var(--ext-add-inputbox-title-plus-border-radius, 50px);
+
+    align-items: center;
+    justify-content: center;
+    height: var(--ext-add-inputbox-title-plus-h, 25px);
+    width: var(--ext-add-inputbox-title-plus-w, 25px);
+    cursor: pointer;
+    border: var(--ext-add-inputbox-title-plus-border, 2px solid white);
+}
+
+.ext-add-inputbox-title-plus:hover{
+    background-color: var(--ext-add-inputbox-title-plus-bck-clr-hvr, lightgray);
+    border: var(--ext-add-inputbox-title-plus-border, 2px solid lightgrey);
+}
+
+.ext-add-inputbox-title-txt{
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    margin-left: var(--ext-add-inputbox-txt-margin-left, 10px);
+    padding: 0 7px;
+    background-color: var(--ext-add-inputbox-txt-bck-clr, lightblue);
+    color: var(--ext-add-inputbox-txt-clr, black);
+    width: fit-content;
+    height: var(--ext-add-inputbox-txt-plus-h, 20px);
+}
+
+.ext-add-inputbox-body{
+    padding: var(--ext-add-inputbox-body-padding, 20px 10px 10px 10px);
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.ext-add-content-row {
+    height: var(--ext-add-content-row-height, 30px);
+    background-color: var(--ext-add-content-row-bck-clr, white);
+    padding: 0 5px 0 15px;
+    border-radius: var(--ext-add-content-row-border-radius, 50px);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 5px;
+    overflow: hidden;
+}
+
+.ext-add-content-row:hover{
+    background-color: var(--ext-add-content-row-hover-bck-clr, whitesmoke);
+    cursor: pointer;
+}
+
+.ext-add-content-row-bullet{
+    padding: 2px 0 0 0;
+}
+
+.ext-addbox-textarea-tag-erase {
+    width: var(--tag-erase-w, 25px);
+    height: var(--tag-erase-h, 25px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+}
+
+.ext-addbox-textarea-tag-erase:hover{
+    background-color: var(--ext-addbox-textarea-tag-erase-hover-bck-clr, darkgray);
+    cursor: pointer;
+}
+
+.ext-addbox-input {
+  border-radius: 10px;
+  padding: 0 5px 0 10px;
+  border: 1px solid transparent;
+  height: 75%;
+}
+
+.ext-addbox-input:focus {
+  background: #f0f4ff; 
+  border: var(--ext-addbox-input-focus-border, 1px dashed darkgrey);
+}

@@ -1,0 +1,179 @@
+/* textarea */
+.ext-textarea-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ext-textarea-lable {
+    padding: 5px 0 0 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.ext-textarea-lable-title {
+    flex: 1;
+}
+
+.ext-textarea-lable-btn {
+    background-color: aquamarine;
+    display: flex;
+    gap: 10px;
+}
+
+.ext-textarea-box {
+    background-color: var(--ext-textarea-box-bck-color, transparent);
+    border-radius: 10px;
+    display: flex;
+    position: relative;
+}
+
+input,
+textarea {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
+    letter-spacing: 0.072px;
+    overflow: hidden;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: red;
+    opacity: 1;
+    font-size: 12;
+    font-weight: 300;
+    padding: 0
+}
+
+textarea {
+    resize: none;
+    overflow: hidden;
+    min-height: 30px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+    box-shadow: 0 0 0px 1000px transparent inset !important;
+    -webkit-text-fill-color: var(--input-clr);
+    background-clip: padding-box !important;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+/* 🌐 Wrapper */
+.ext-textarea-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* 🏷️ Label Area */
+.ext-textarea-label {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 22px;
+}
+
+/* 🏷️ Label Title */
+.ext-textarea-label-title {
+    flex: 1;
+    color: darkblue;
+    font-weight: 800;
+}
+
+/* ⚙️ Label Controls (counter + clear) */
+.ext-textarea-label-btns {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 🔢 Character Count */
+.form-container-count {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* ❌ Clear Button */
+.form-container-clear {
+    border: none;
+    background: none;
+    color: #007aff;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+/* ✏️ Textarea Box */
+.ext-textarea-box {
+    width: 100%;
+}
+
+.ext-textarea {
+    font-size: var(--ext-textarea-input-txt-size, 14px);
+    background-color: var(--ext-textarea-input-bck-clr, white);
+    color: var(--ext-textarea-input-clr, red);
+    font-weight: var(--ext-textarea-d-font-weight, 400);
+    border-radius: var(--ext-textarea-border-radius, 20px);
+    border: none;
+    outline: none;
+    width: 100%;
+    display: grid;
+    justify-content: left;
+    align-items: center;
+    box-sizing: border-box;
+    resize: none;
+    overflow: hidden;
+    padding: 10px;
+    line-height: 1.5;
+}
+
+.ext-textarea:focus{
+    background-color: var(--ext-textarea-focus-bck-clr, lavender);
+    border-radius: var(--ext-textarea-border-radius, 20px);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    color: var(--ext-textarea-input-clr);
+    text-align: left;
+    background-color: var(--ext-textarea-input-bck-clr);
+    outline: none;
+    border: none;
+}
+
+.ext-textarea.highlight {
+  border: 1px solid #ccc;       /* normal border */
+  outline: none;                /* remove default focus outline */
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* Highlight on focus */
+.ext-textarea.highlight:focus {
+  border-color: #4A90E2;        /* optional: change border color */
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.6);  /* glow effect */
+}
+
+.ext-textarea-svg-close{
+    background-color: var(--ext-textarea-svg-close-bck-clr, transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--ext-textarea-border-radius, 50px);
+}
+
+.ext-textarea-svg-close:hover{
+    cursor: pointer;
+    background-color: var(--ext-textarea-svg-close-hover-bck-clr, lightgrey);
+}

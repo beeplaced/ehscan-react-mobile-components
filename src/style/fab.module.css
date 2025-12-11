@@ -1,0 +1,59 @@
+.fabMenu {
+  position: fixed;
+  bottom: var(--ext-mobile-fab-bottom, 15px);
+  right: var(--ext-mobile-fab-right, 15px);
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Main FAB */
+.fabMain {
+  width: var(--ext-mobile-fab-w, 50px);
+  height: var(--ext-mobile-fab-h, 50px);
+  border-radius: var(--ext-mobile-fab-border-radius, 50%);
+  background-color: var(--ext-mobile-fab-bck-clr, #3b82f6);
+  color: var(--ext-mobile-fab-clr, white);
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--ext-mobile-fab-box-shadow, 0 4px 12px rgba(0, 0, 0, 0.3));
+  transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fabMain:active {
+  transform: scale(1.1);
+}
+
+.fabSub {
+  width: var(--ext-mobile-fab-sub-w, 40px);
+  height: var(--ext-mobile-fab-sub-h, 40px);
+  position: absolute;
+  bottom: 0;
+  border-radius: var(--ext-mobile-fab-sub-border-radius, 50%);
+  background-color: var(--ext-mobile-fab-sub-bck-clr, darkgray);
+  box-shadow: var(--ext-mobile-fab-sub-box-shadow, 0 2px 8px rgba(0, 0, 0, 0.2));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(0) scale(0.8);
+  transition: transform 0.3s, opacity 0.3s;
+  cursor: pointer;
+}
+
+.fabIcon {
+  stroke: white;
+  stroke-width: 2;
+  stroke-linecap: round;
+  transform-origin: center;
+  transition: transform 0.6s ease-in-out;
+}
+
+.open {
+  transform: rotate(45deg);
+}

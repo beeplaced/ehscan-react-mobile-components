@@ -1,0 +1,109 @@
+.dndcontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.horizontal {
+  flex-direction: row;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  background-color: var(--ext-dnd-item-bck-clr, darkblue);
+  border-radius: var(--ext-dnd-item-border-radius, 4px);
+  padding: var(--ext-dnd-item-padding, 10px);
+  transition: transform 0.5s ease;
+  color: var(--ext-dnd-item-clr, white);
+  height: var(--ext-dnd-item-height, 40px);
+}
+
+svg.checkboxSvg {
+  width: var(--ext-dnd-svg-width, 30px);
+  height: var(--ext-dnd-svg-height, 30px);
+}
+
+.checkboxSvgPath {
+  fill: var(--ext-dnd-svg-fill, white);
+}
+
+.checkboxSvgCheck {
+  fill: var(--ext-dnd-svg-fill-check, lightslategrey);
+}
+
+.listItem:hover {
+  filter: brightness(.9);
+  cursor: pointer;
+}
+
+.selected {
+  background-color: var(--ext-dnd-item-selected-bck-clr,darkviolet);
+}
+
+.hovered {
+  background-color: var(--ext-dnd-item-selected-bck-hvr-clr, darkgreen);
+  transform: scale(1.03);
+}
+
+.dragHandle {
+  cursor: grab;
+  padding-right: 5px;
+  user-select: none;
+  color: var(--ext-dnd-item-handle-clr, #6c8cff);
+}
+
+.dragHandle:active {
+  cursor: grabbing;
+}
+
+.itemBody {
+  flex: 1;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.dndSelect {
+  cursor: pointer;
+}
+
+.placeholder {
+  border: 1px dashed #6c8cff;
+}
+
+.dragGhost {
+  padding: var(--ext-dnd-item-ghost-padding, 10px);
+  background: var(--ext-dnd-item-ghost-bck-clr, white);
+  border: var(--ext-dnd-item-ghost-border, 1px solid #6c8cff);
+  color: var(--ext-dnd-item-ghost-clr, lightslategrey);
+  border-radius: var(--ext-dnd-item-ghost-border-radius, 6px);
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes popAnimation {
+  0% {
+    transform: scale(1);
+    border-color: #6c8cff;
+    box-shadow: 0 0 0 rgba(108, 140, 255, 0);
+  }
+
+  50% {
+    transform: scale(1.05);
+    border-color: #5a7fff;
+    box-shadow: 0 0 5px rgba(90, 127, 255, 0.3);
+  }
+
+  100% {
+    transform: scale(1);
+    border-color: #6c8cff;
+    box-shadow: 0 0 0 rgba(108, 140, 255, 0);
+  }
+}
+
+.pop {
+  animation: popAnimation 0.2s ease forwards;
+}
