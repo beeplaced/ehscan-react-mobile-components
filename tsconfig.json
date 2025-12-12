@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "skipLibCheck": true,
     "target": "ES2015",
     "module": "ESNext",
     "declaration": true,
@@ -7,7 +8,9 @@
     "strict": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "types": ["react", "react-dom"]
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }

@@ -1,0 +1,15 @@
+.swiper-container {
+  flex: 1;               /* make Swiper fill all remaining height */
+  overflow: hidden;
+}
+
+.swiper-container .swiper-wrapper {
+  height: 100%;          /* ensure wrapper stretches full height */
+}
+
+.swiper-container .swiper-slide {
+  height: 100%;          /* each slide fills container height */
+  display: flex;          /* optional: center content */
+  justify-content: center;
+  align-items: center;
+}

@@ -1,6 +1,6 @@
 {
   "name": "ehscan-react-mobile-components",
-  "version": "0.0.2",
+  "version": "0.0.6",
   "description": "components",
   "main": "dist/Components.js",
   "types": "dist/Components.d.ts",
@@ -26,10 +26,14 @@
   ],
   "devDependencies": {
     "@types/glob": "8",
-    "@types/react": "^19.1.12",
-    "@types/react-dom": "^19.1.9",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
     "glob": "8",
     "minimatch": "5",
     "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "framer-motion": "^12.23.26",
+    "swiper": "^12.0.3"
   }
 }

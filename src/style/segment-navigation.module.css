@@ -1,0 +1,31 @@
+
+.segmentNav {
+  height: 30px;
+  background-color: white;
+  display: grid;
+  grid-template-rows: auto auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.segmentNavMain {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  background-color: white;
+  align-items: center;
+  justify-items: center;
+  gap: 10px;
+}
+
+.segmentUnderline {
+  position: relative;
+}
+
+.segmentUnderlineInner {
+  background-color: #0944CA;
+  width: 100px;
+  left: 129px;
+  height: 100%;
+  position: relative;
+  border-radius: 50px;
+  transition: width 0.5s ease, left 0.2s ease;
+}
