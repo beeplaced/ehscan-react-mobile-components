@@ -1,0 +1,20 @@
+.header {
+  align-items: center;
+  height: var(--ext-header-height, 50px);
+  padding: 0 var(--ext-header-side-padding, 10px);
+  display: grid;
+  grid-template-columns: auto auto 1fr auto auto;
+  background-color: var(--ext-header-bck-clr, #007aff);
+}
+
+.title {
+  font-weight: var(--ext-header-font-weight, 500);
+  padding: 0 0 0 5px;
+  font-size: 100%;
+  line-height: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}

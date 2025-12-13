@@ -32,4 +32,3 @@ const useRipple = () => {
 };
 
 export default useRipple;
-
