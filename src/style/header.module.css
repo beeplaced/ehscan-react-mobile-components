@@ -9,6 +9,7 @@
 
 .title {
   font-weight: var(--ext-header-font-weight, 500);
+  color: var(--ext-header-title-clr, lightslategrey);
   padding: 0 0 0 5px;
   font-size: 100%;
   line-height: 1;

@@ -1,6 +1,6 @@
 {
   "name": "ehscan-react-mobile-components",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "components",
   "main": "dist/Components.js",
   "types": "dist/Components.d.ts",

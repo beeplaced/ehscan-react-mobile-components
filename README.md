@@ -89,9 +89,11 @@ const Page = () => {
   /* Header layout */
   --ext-header-height: 50px;
   --ext-header-side-padding: 10px;
-
+  --ext-header-gap: 3px;
+  
   /* Header colors */
   --ext-header-bck-clr: #007aff;
+  --ext-header-title-clr: lightslategrey;
 
   /* Typography */
   --ext-header-font-weight: 500;
@@ -100,5 +102,6 @@ const Page = () => {
 ----
 # Changelog
 
-## [0.0.7] - 2025-12-13
-- Added HeaderElement , image and docu
+## [0.0.8] - 2025-12-13
+- Added HeaderElement, image and docu
+- inject module styling
