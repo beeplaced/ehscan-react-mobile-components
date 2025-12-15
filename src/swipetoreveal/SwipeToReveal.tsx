@@ -43,17 +43,16 @@ export const SwipeToReveal: React.FC<Props> = ({ row, buttons, close, setClose, 
     const threshold = 30;
 
     useEffect(() => {
-        console.log(close, row.id)
         if (close === undefined) return
         if (close === row.id) return;
-        closeIten()
+        closeItem();
     }, [close]);
 
     const clickMain = () => {
-        closeIten();
+        closeItem();
     };
 
-    const closeIten = () => {
+    const closeItem = () => {
         setOffsetX(0);
         setOpenSide(undefined);
         setLengthEnhancer(0);
@@ -64,8 +63,6 @@ export const SwipeToReveal: React.FC<Props> = ({ row, buttons, close, setClose, 
         const rightWidth = rightButtonRef.current?.getBoundingClientRect().width ?? 0;
         setMaxSwipe({ leftWidth, rightWidth });
     }, []);
-
-    // Update border radius based on current offset
     useEffect(() => {
         const maxSwipeDistance = offsetX > 0 ? maxSwipe.leftWidth : maxSwipe.rightWidth;
         const radius = maxSwipeDistance > 0
@@ -76,10 +73,9 @@ export const SwipeToReveal: React.FC<Props> = ({ row, buttons, close, setClose, 
 
     const dragStartOffset = useRef(0);
 
-    // Swipe handlers
-    const handlers = useSwipeable({
+    const handlers = useSwipeable({    // Swipe handlers
         onSwipeStart: () => {
-            dragStartOffset.current = offsetX; // remember current position when drag starts
+            dragStartOffset.current = offsetX;
         },
         onSwiping: ({ deltaX }) => {
             setIsDragging(true);
@@ -97,7 +93,6 @@ export const SwipeToReveal: React.FC<Props> = ({ row, buttons, close, setClose, 
         onSwiped: ({ deltaX }) => {
             setIsDragging(false);
             setLengthEnhancer(0);
-            // Determine swipe direction
             if (offsetX > 0) { // main div was swiped right
                 if (deltaX > threshold) {
                     setOpenSide('left');
