@@ -8,6 +8,8 @@ Bundle of react Components for Mobile Web View
 
 ## Table of Contents
 - [Mobile Header](#mobile-header)
+- [SwipeToReveal](#swipetoreveal)
+
 - PopUp
 - Mobile Window
 - Page Swiper (for Window)
@@ -23,6 +25,95 @@ yarn add ehscan-react-mobile-components
 ```
 
 # Usage Examples
+
+## SwipeToReveal
+
+![Button Preview](https://raw.githubusercontent.com/beeplaced/ehscan-react-mobile-components/main/src/images/SwipeToReveal.png)
+
+SwipeToReveal is a reusable React component that adds swipe-to-reveal actions to any row-based UI (e.g. lists, tables, or cards). It allows users to swipe left or right on a row to reveal configurable action buttons on either side, similar to mobile email or task apps.
+
+The component supports both touch and mouse interactions, making it suitable for mobile and desktop environments.
+
+Features: 
+
+- **Bidirectional swipe**
+  - Swipe right to reveal left-side actions
+  - Swipe left to reveal right-side actions
+
+- **Configurable action buttons**
+  - Buttons can be customized with icons, colors, widths, and action identifiers
+  - Separate button sets for left and right sides
+
+- **Snap & threshold behavior**
+  - Rows only open when the swipe passes a defined threshold
+  - Partial swipes snap back to the closed state
+
+- **Single open row control**
+  - Integrates with a shared close state to ensure only one row is open at a time
+
+- **Dynamic visuals**
+  - Smooth dragging and snapping animations
+  - Adaptive border radius while swiping
+  - Stretch feedback when swiping against an already open side
+
+```jsx
+import { SwipeToReveal } from 'ehscan-react-mobile-components';
+
+const SwipeLoop = () => {
+
+    const [close, setClose] = useState(0);
+
+    // Define Buttons for all entries of this chunk
+    // If set of Buttons change, open a new SwipeLoop
+    // Some Examplatory SVGs - https://cc0-icons.jonh.eu/
+
+    interface Button {
+      title: ReactNode;
+      action: string;
+      backClr: string;
+      clr: string;
+      width: number;
+    }
+
+    const buttons: { left: Button[]; right: Button[] } = {
+        left: [
+            { title: <SVGFile />, action: "do one start", backClr: "yellow", clr: "white", width: 50 },
+            { title: <SVGBookmark />, action: "do two start", backClr: "violet", clr: "white", width: 50 },
+        ],
+        right: [
+            { title: <SVGMore />, action: "do one end", backClr: "darkviolet", clr: "white", width: 50 },
+            { title: <SVGTrash />, action: "do two end", backClr: "red", clr: "white", width: 40 },
+        ]
+    };
+
+    // Define Entries as rows
+    const rows = [{ id: 1, title: 'first Entry' }, { id: 2, title: 'next Entry' }, { id: 3, title: '...else' }];
+
+    //Global Action
+    const action = (entry: { id: number, action: string }) => {
+        console.log("do something with", entry);
+    }
+
+    return (
+        rows.map(row => {
+            return (<>
+                <SwipeToReveal
+                    key={`swipe_${row.id}`}
+                    row={{ id: row.id }}
+                    close={close}
+                    setClose={setClose}
+                    buttons={buttons}
+                    action={action}
+                ><div style={{ padding: 10 }}>{row.title}</div>
+                </SwipeToReveal>
+            </>)
+        })
+    );
+};
+
+export default SwipeLoop;
+
+```
 
 ## Mobile Header
 

@@ -2,6 +2,7 @@
   align-items: center;
   height: var(--ext-header-height, 50px);
   padding: 0 var(--ext-header-side-padding, 10px);
+  gap: var(--ext-header-gap, 3px);
   display: grid;
   grid-template-columns: auto auto 1fr auto auto;
   background-color: var(--ext-header-bck-clr, #007aff);

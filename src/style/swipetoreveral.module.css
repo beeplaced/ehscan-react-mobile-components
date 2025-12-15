@@ -1,0 +1,84 @@
+.swipeContainer {
+  position: relative;
+  width: 100%;
+  min-height: 60px;
+  height: fit-content;
+  overflow: hidden;
+  margin: 0;
+  background-color: transparent;
+  margin-bottom: 10px;
+  --swipe-cont-border-radius: 4px;
+}
+
+.hiddenDiv {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: fit-content;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  --svg-fill-lighter-clr: white;
+  --svg-w-h: 38px;
+  transition: border-radius 0.2s ease;
+}
+
+.end {
+  right: 0;
+}
+
+.start {
+  left: 0;
+}
+
+.hiddenBtn {
+  background-color: aqua;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.hiddenBtn > svg {
+    width: var(--ext-swipe-btn-svg-w, 30px);
+    height: var(--ext-swipe-btn-svg-h, 30px);
+    display: flex;
+}
+
+
+.left:first-child {
+  border-radius: var(--border-radius, var(--swipe-cont-border-radius)) 0 0 var(--border-radius, var(--swipe-cont-border-radius));
+}
+
+.right:last-child {
+  border-radius: 0 var(--border-radius, var(--swipe-cont-border-radius)) var(--border-radius, var(--swipe-cont-border-radius)) 0;
+}
+
+.mainDiv {
+  position: absolute;
+  opacity: 1;
+  height: 100%;
+  --main-length-enhancer: 0px;
+  width: calc(100% + var(--main-length-enhancer));
+  background-color: white;
+  display: grid;
+  justify-content: left;
+  align-items: center;
+  border-radius: var(--swipe-cont-border-radius);
+  transform: translateX(0);
+  will-change: transform, width;
+  touch-action: pan-y;
+  transition: transform 0.5s ease;
+}
+
+.mainDivDragging {
+  transition: none;
+}
+
+.mainDivSnap {
+  transition: transform 0.3s ease, width 0.3s ease;
+}

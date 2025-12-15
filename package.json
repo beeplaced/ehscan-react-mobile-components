@@ -1,6 +1,6 @@
 {
   "name": "ehscan-react-mobile-components",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "description": "components",
   "main": "dist/Components.js",
   "types": "dist/Components.d.ts",
@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "framer-motion": "^12.23.26",
+    "react-swipeable": "^7.0.2",
     "swiper": "^12.0.3"
   }
 }
