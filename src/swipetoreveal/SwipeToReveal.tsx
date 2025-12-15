@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useRef, useState } from "react";
 import { useSwipeable } from "react-swipeable";
-import styles from "./swipetoreveral.module.css"
+import styles from "../style/swipetoreveral.module.css";
 
 interface Row {
     id: number;

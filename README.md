@@ -193,6 +193,9 @@ const Page = () => {
 ----
 # Changelog
 
+## [0.1.0] - 2025-12-15
+- Added SwipeToReveal, image and docu
+
 ## [0.0.8] - 2025-12-13
 - Added HeaderElement, image and docu
 - inject module styling
