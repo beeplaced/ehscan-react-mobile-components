@@ -9,7 +9,7 @@
 
 .segmentNavMain {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(var(--cols, 3), auto);
   background-color: white;
   align-items: center;
   justify-items: center;

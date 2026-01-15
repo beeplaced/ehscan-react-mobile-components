@@ -193,6 +193,9 @@ const Page = () => {
 ----
 # Changelog
 
+## [0.1.3] - 2026-01-15
+- Added grid repeat based upon pages.length
+
 ## [0.1.2] - 2026-01-15
 - Added Translation to SegmentNav
 

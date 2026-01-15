@@ -37,7 +37,9 @@ export const SegmentNavigation: React.FC<Props> = ({ pages, changeSegment, segme
 
     return (
         <div className={styles.segmentNav}>
-            <div className={styles.segmentNavMain}>
+            <div className={styles.segmentNavMain}
+            style={{ '--cols': pages.length } as React.CSSProperties}
+            >
                 {pages.map((p, index) => (
                     <div
                         key={`page-${index}`}
