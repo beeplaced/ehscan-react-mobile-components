@@ -1,6 +1,6 @@
 
 .segmentNav {
-  height: 30px;
+  height: 100%;
   background-color: white;
   display: grid;
   grid-template-rows: auto auto;
