@@ -13,11 +13,13 @@
   background-color: white;
   align-items: center;
   justify-items: center;
+  font-size: var(--ext-segment-nav-font-size, 95%);
   gap: 10px;
 }
 
 .segmentUnderline {
   position: relative;
+  height: var(--ext-segment-nav-underline-height, 3px);
 }
 
 .segmentUnderlineInner {

@@ -193,6 +193,11 @@ const Page = () => {
 ----
 # Changelog
 
+
+
+## [0.1.4] - 2026-01-15
+- Added --ext-segment-nav
+
 ## [0.1.3] - 2026-01-15
 - Added grid repeat based upon pages.length
 
