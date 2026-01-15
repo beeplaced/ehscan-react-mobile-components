@@ -1,10 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import styles from '../style/segment-navigation.module.css';
 
+type Language = "de" | "en";
+
+interface PageConfig {
+  page: string;
+  title: Record<Language, string>;
+}
+
 interface Props {
     segment: string;
     changeSegment: (segment: string) => void;
-    pages: string[]; // pages passed as prop
+    pages: PageConfig[]; // pages passed as prop
+    lang?: Language;
 }
 
 interface UnderlineSettings {
@@ -12,13 +20,13 @@ interface UnderlineSettings {
     width: number;
 }
 
-export const SegmentNavigation: React.FC<Props> = ({ pages, changeSegment, segment }) => {
+export const SegmentNavigation: React.FC<Props> = ({ pages, changeSegment, segment, lang = 'de' }) => {
     const segmentRefs = useRef<(HTMLDivElement | null)[]>([]);
     const [underlineSettings, setUnderlineSettings] = useState<UnderlineSettings>({ left: 0, width: 0 });
     const UNDERLINE_EXTRA = 10;
 
     useEffect(() => {
-        const index = pages.findIndex((p) => p.toLowerCase() === segment.toLowerCase());
+        const index = pages.findIndex((p) => p.page.toLowerCase() === segment.toLowerCase());
         const el = segmentRefs.current[index];
         if (!el) return; 
         setUnderlineSettings({
@@ -30,15 +38,14 @@ export const SegmentNavigation: React.FC<Props> = ({ pages, changeSegment, segme
     return (
         <div className={styles.segmentNav}>
             <div className={styles.segmentNavMain}>
-                {pages.map((page, index) => (
+                {pages.map((p, index) => (
                     <div
                         key={`page-${index}`}
                         ref={(el) => {
                             segmentRefs.current[index] = el;
                         }}
-                        onClick={() => changeSegment(page)}
-                    >
-                        {page}
+                        onClick={() => changeSegment(p.page)}>
+                        {p.title[lang]}
                     </div>
                 ))}
             </div>

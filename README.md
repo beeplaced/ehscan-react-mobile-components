@@ -193,6 +193,9 @@ const Page = () => {
 ----
 # Changelog
 
+## [0.1.2] - 2026-01-15
+- Added Translation to SegmentNav
+
 ## [0.1.0] - 2025-12-15
 - Added SwipeToReveal, image and docu
 
